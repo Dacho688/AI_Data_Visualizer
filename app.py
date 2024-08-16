@@ -36,8 +36,8 @@ Structure of the data:
 Prompt:
 """
 
-example_notes="""This data is about the Titanic wreck in 1912.
-Create an interactive dashboard centered around uncovering the impact of different variables on surviving."""
+#example_notes="""This data is about the Titanic wreck in 1912.
+#Create an interactive dashboard centered around uncovering the impact of different variables on surviving."""
 @spaces.GPU
 def interact_with_agent(File, Prompt):
 
