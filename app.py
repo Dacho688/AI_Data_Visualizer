@@ -40,8 +40,6 @@ example_notes="""This data is about the Titanic wreck in 1912.
 Create an interactive dashboard centered around uncovering the impact of different variables on surviving."""
 @spaces.GPU
 def interact_with_agent(File, Prompt):
-    shutil.rmtree("./figures")
-    os.makedirs("./figures")
 
     data_file = pd.read_csv(File)
     data_structure_notes = f"""- Description (output of .describe()):
