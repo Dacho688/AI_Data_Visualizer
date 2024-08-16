@@ -1,13 +1,10 @@
 import os
 import shutil
 import gradio as gr
-from transformers import ReactCodeAgent, HfEngine, Tool
+from transformers import ReactCodeAgent, HfEngine
 import pandas as pd
-
-from gradio import Chatbot
-from streaming import stream_to_gradio
+import spaces
 from huggingface_hub import login
-from gradio.data_classes import FileData
 
 login(os.getenv("HUGGINGFACEHUB_API_TOKEN"))
 
@@ -41,7 +38,7 @@ Prompt:
 
 example_notes="""This data is about the Titanic wreck in 1912.
 Create an interactive dashboard centered around uncovering the impact of different variables on surviving."""
-
+@spaces.GPU
 def interact_with_agent(File, Prompt):
     shutil.rmtree("./figures")
     os.makedirs("./figures")
